@@ -28,17 +28,22 @@ end
 
 def edit
   # 編集したいコードを見つけ@params に入れ、ビューで使えるようにしている。
-  @prototype = Prototype.find(params[:id])
+# @prototype = Prototype.find(params[:id])
 end
 
 def update
-  prototype = Prototype.find(params[:id])
-  prototype.update(prototype_params)
-  if prototype.update(prototype_params)
-    redirect_to prototype_path
-  else
-    render :edit
-  end
+  # prototype = Prototype.find(params[:id])
+  # prototype.update(prototype_params)
+  # if prototype.update(prototype_params)
+  #   redirect_to prototype_path
+  # else
+  #   render :edit
+  # end
+   if @prototype.update(prototype_params)
+      redirect_to prototype_path(@prototype)
+    else
+      render :edit
+    end
 end
 
 def destroy
