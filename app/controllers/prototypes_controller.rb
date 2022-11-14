@@ -20,11 +20,15 @@ def create
   end
 end
 
-def show
-  @prototype = Prototype.find(params[:id])
-  @comments = @prototype.comments
-  @comment = Comment.new
-end
+# def show
+#   @prototype = Prototype.find(params[:id])
+#   @comments = @prototype.comments
+#   @comment = Comment.new
+# end
+ def show
+    @comment = Comment.new
+    @comments = @prototype.comments
+  end
 
 def edit
   # 編集したいコードを見つけ@params に入れ、ビューで使えるようにしている。
